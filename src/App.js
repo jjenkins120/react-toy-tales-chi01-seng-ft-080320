@@ -78,8 +78,8 @@ class App extends React.Component{
     }
     fetch(`http://localhost:3000/toys`, reqObj)
     .then(resp => resp.json())
-    .then( newToyArray => {
-      console.log(newToyArray)
+    .then( newToy => {
+      const newToyArray = [...this.state.toys,newToy]
       this.setState({
         toys: newToyArray
       })
